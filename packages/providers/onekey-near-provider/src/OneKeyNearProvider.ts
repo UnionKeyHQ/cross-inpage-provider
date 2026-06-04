@@ -1,8 +1,8 @@
 import depd from 'depd';
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 import entries from 'lodash/entries';
 import isString from 'lodash/isString';
 import { baseEncode, baseDecode } from 'borsh';
@@ -70,7 +70,7 @@ export type OneKeyNearWalletProps = {
   transactionCreator?: TransactionCreator;
 } & IInpageProviderConfig;
 
-export type OneKeyWalletAccountProps = {
+export type UnionKeyWalletAccountProps = {
   wallet: OneKeyNearProvider;
   connection: unknown;
   accountId: string;
@@ -241,7 +241,7 @@ class OneKeyNearProvider extends ProviderNearBase {
   _connectEagerly?: boolean = true;
   _authData: NearAccountInfo = DEFAULT_AUTH_DATA;
   _authDataKey = '@OneKeyNearWalletAuthData';
-  _account?: OneKeyWalletAccount | null;
+  _account?: UnionKeyWalletAccount | null;
 
   _connection: NearConnection;
   _networkId = '';
@@ -718,7 +718,7 @@ class OneKeyNearProvider extends ProviderNearBase {
   account() {
     const accountId = this.getAccountId();
     if (!this._account || this._account.accountId !== accountId) {
-      this._account = new OneKeyWalletAccount({
+      this._account = new UnionKeyWalletAccount({
         wallet: this,
         connection: this._connection,
         accountId,
@@ -728,10 +728,10 @@ class OneKeyNearProvider extends ProviderNearBase {
   }
 }
 
-class OneKeyWalletAccount extends Account {
+class UnionKeyWalletAccount extends Account {
   _wallet: OneKeyNearProvider;
 
-  constructor({ wallet, connection, accountId }: OneKeyWalletAccountProps) {
+  constructor({ wallet, connection, accountId }: UnionKeyWalletAccountProps) {
     super(connection as Connection, accountId);
     this._wallet = wallet;
   }
@@ -857,4 +857,4 @@ class OneKeyWalletAccount extends Account {
   }
 }
 
-export { OneKeyNearProvider, OneKeyWalletAccount, serializeTransaction };
+export { OneKeyNearProvider, UnionKeyWalletAccount, serializeTransaction };

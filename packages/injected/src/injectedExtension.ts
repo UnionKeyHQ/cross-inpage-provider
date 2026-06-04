@@ -1,10 +1,10 @@
-import { JsBridgeExtInjected } from '@onekeyfe/extension-bridge-injected';
+import { JsBridgeExtInjected } from '@unionkeyfe/extension-bridge-injected';
 import {
   injectedProviderReceiveHandler,
   injectJsBridge,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@unionkeyfe/cross-inpage-provider-core';
 
-import { injectWeb3Provider } from '@onekeyfe/inpage-providers-hub';
+import { injectWeb3Provider } from '@unionkeyfe/inpage-providers-hub';
 
 // - send
 const bridge = (): JsBridgeExtInjected =>

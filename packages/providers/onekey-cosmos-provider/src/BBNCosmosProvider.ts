@@ -91,7 +91,7 @@ export class BBNProviderCosmos implements IProviderBBNCosmos {
   }
 
   getWalletProviderName(): Promise<string> {
-    return Promise.resolve('OneKey');
+    return Promise.resolve('UnionKey');
   }
 
   getWalletProviderIcon(): Promise<string> {

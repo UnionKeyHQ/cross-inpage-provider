@@ -9,9 +9,9 @@ import {
   IInpageProviderConfig,
   checkWalletSwitchEnable,
   defineWindowProperty,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+} from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 
 import { ProviderTronBase } from './ProviderTronBase';
 import {
@@ -160,13 +160,13 @@ class ProviderTron extends ProviderTronBase implements IProviderTron {
 
       if (window.tronWeb !== undefined) {
         this._log.warn(
-          'OneKey: TronWeb is already initiated. Onekey will overwrite the current instance',
+          'UnionKey: TronWeb is already initiated. Onekey will overwrite the current instance',
         );
       }
 
       if (window.sunWeb !== undefined) {
         this._log.warn(
-          'OneKey: TronWeb is already initiated. Onekey will overwrite the current instance',
+          'UnionKey: TronWeb is already initiated. Onekey will overwrite the current instance',
         );
       }
 
@@ -183,7 +183,7 @@ class ProviderTron extends ProviderTronBase implements IProviderTron {
         get() {
           if (!self._connected) {
             self._log.warn(
-              'OneKey: We recommend that DApp developers use $onekey.tron.request({method: "tron_requestAccounts"}) to request users’ account information at the earliest time possible in order to get a complete TronWeb injection.',
+              'UnionKey: We recommend that DApp developers use $onekey.tron.request({method: "tron_requestAccounts"}) to request users’ account information at the earliest time possible in order to get a complete TronWeb injection.',
             );
 
             const origin = globalWindow?.location?.origin || '';
@@ -240,7 +240,7 @@ class ProviderTron extends ProviderTronBase implements IProviderTron {
       this._dispatch('tronLink#initialized');
       this._initialized = true;
     } catch (error) {
-      this._log.error('OneKey: Failed to get initial state. Please report this bug.', error);
+      this._log.error('UnionKey: Failed to get initial state. Please report this bug.', error);
     }
   }
 
@@ -275,7 +275,7 @@ class ProviderTron extends ProviderTronBase implements IProviderTron {
 
     if (!Array.isArray(accounts)) {
       this._log.error(
-        'Onekey: Received invalid accounts parameter. Please report this bug.',
+        'UnionKey: Received invalid accounts parameter. Please report this bug.',
         accounts,
       );
       _accounts = [];
@@ -283,7 +283,7 @@ class ProviderTron extends ProviderTronBase implements IProviderTron {
 
     for (const account of _accounts) {
       if (typeof account !== 'string') {
-        this._log.error('Onekey: Received non-string account. Please report this bug.', accounts);
+        this._log.error('UnionKey: Received non-string account. Please report this bug.', accounts);
         _accounts = [];
         break;
       }

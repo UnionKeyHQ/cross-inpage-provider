@@ -1,4 +1,4 @@
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 export interface EnableNetworkOpts {
   genesisID?: string;
@@ -87,7 +87,7 @@ export type DisplayEncoding = 'utf8' | 'hex';
 export interface IProviderAlgo {
   isConnected: boolean;
   isExodus: boolean;
-  isOneKey: boolean;
+  isUnionKey: boolean;
   address: string | null;
 
   enable(opts?: EnableOpts): Promise<EnableResult>;

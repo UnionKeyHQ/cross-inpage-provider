@@ -1,6 +1,6 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
-import { ProviderBase, IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
+import { ProviderBase, IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
 
 class ProviderAptosBase extends ProviderBase {
   constructor(props: IInpageProviderConfig) {

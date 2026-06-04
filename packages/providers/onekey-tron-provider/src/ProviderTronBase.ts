@@ -1,5 +1,5 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
-import { ProviderBase, IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
+import { ProviderBase, IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
 
 class ProviderTronBase extends ProviderBase {
   constructor(props: IInpageProviderConfig) {

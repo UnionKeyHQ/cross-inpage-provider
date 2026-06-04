@@ -1,7 +1,7 @@
 const ONEKEY_WEBSITE_LIST = [
-  'app.onekey.so',
+  'app.unionkey.io',
   '1key.so',
-  'app.onekeytest.com',
+  'app.unionkey.io',
 ];
 
 export function isOneKeyWebsite() {

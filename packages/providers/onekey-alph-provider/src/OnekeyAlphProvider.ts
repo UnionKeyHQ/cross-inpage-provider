@@ -1,5 +1,5 @@
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
 import {
   AlephiumWindowObject,
   EnableOptions,

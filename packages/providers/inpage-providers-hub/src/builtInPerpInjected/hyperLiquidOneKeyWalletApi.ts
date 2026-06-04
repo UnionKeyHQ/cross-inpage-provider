@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
-import type { ProviderEthereum } from '@onekeyfe/onekey-eth-provider';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
+import type { ProviderEthereum } from '@unionkeyfe/unionkey-eth-provider';
 import { isNumber, isString } from 'lodash-es';
 import { hackConnectButton } from '../connectButtonHack/hackConnectButton';
 import providersHubUtils from '../utils/providersHubUtils';
@@ -117,7 +117,7 @@ function saveBuilderFeeConfigToStorage({
       result.expectBuilderAddress.toLowerCase(),
       result.expectMaxBuilderFee,
     );
-    HyperliquidBuilderStore.storeUpdateByOneKeyWallet = true;
+    HyperliquidBuilderStore.storeUpdateByUnionKeyWallet = true;
 
     // do not modify localStorage, otherwise the hyperliquid page will not work properly when the onekey plugin is disabled
     localStorage.removeItem('hyperliquid.order_builder_info');
@@ -130,7 +130,7 @@ function saveBuilderFeeConfigToStorage({
     // );
   } else if (!result?.expectBuilderAddress || result?.expectMaxBuilderFee < 0) {
     localStorage.removeItem('hyperliquid.order_builder_info');
-    HyperliquidBuilderStore.storeUpdateByOneKeyWallet = false;
+    HyperliquidBuilderStore.storeUpdateByUnionKeyWallet = false;
   }
 }
 
@@ -202,7 +202,7 @@ function hackConnectionButton() {
         }
       };
 
-      const hideNotOneKeyWalletConnectButton = () => {
+      const hideNotUnionKeyWalletConnectButton = () => {
         const buttons = Array.from(document?.querySelectorAll?.('div.modal button'));
         const oneKeyButton = buttons.find((button) =>
           button?.textContent?.toLowerCase()?.includes?.('onekey'),
@@ -231,8 +231,8 @@ function hackConnectionButton() {
         console.error(error);
       }
       try {
-        if (customSettings?.hideNotOneKeyWalletConnectButton ?? true) {
-          hideNotOneKeyWalletConnectButton();
+        if (customSettings?.hideNotUnionKeyWalletConnectButton ?? true) {
+          hideNotUnionKeyWalletConnectButton();
         }
       } catch (error) {
         console.error(error);
@@ -276,7 +276,7 @@ async function checkHyperliquidUserApproveStatus({
   if (
     ethereum &&
     ethereum?.request &&
-    ethereum?.isOneKey &&
+    ethereum?.isUnionKey &&
     ethereum?.selectedAddress &&
     ethereum?.chainId
   ) {

@@ -85,7 +85,7 @@ contextBridge.exposeInMainWorld('__onekeyDesktopBridge', {
 // webFrame.executeJavaScript runs code in the main world's V8 context.
 // Called from preload, it executes before the page's own scripts.
 webFrame.executeJavaScript(${JSON.stringify(wrappedProviderCode)}).catch(function (err) {
-  console.error('[OneKey] Failed to inject provider', err);
+  console.error('[UnionKey] Failed to inject provider', err);
 });
 })();
 `;

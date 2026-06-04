@@ -2,8 +2,8 @@ import {
   checkWalletSwitchEnable,
   ISpecialPropertyProviderNamesReflection,
   Logger,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { throttle, ThrottleSettings } from 'lodash-es';
 import type { IWindowOneKeyHub } from '../injectWeb3Provider';
 
@@ -197,7 +197,7 @@ text-align: center;
     //    action__connect_onekey_extension
     //    action__connect_onekey
     btn.innerHTML = `
-    <span>Connect OneKey</span>
+    <span>Connect UnionKey</span>
     <span class='onekey-spinner-element' style='
     display: none;
     vertical-align: middle;

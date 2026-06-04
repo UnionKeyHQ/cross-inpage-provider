@@ -1,4 +1,4 @@
-﻿# CLAUDE.md
+# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -95,13 +95,13 @@ yarn example
 ## Key Development Patterns
 
 ### Provider Implementation
-New blockchain providers should extend `ProviderBase` from `@onekeyfe/cross-inpage-provider-core` and implement required methods. Register in the provider hub using `providerName`.
+New blockchain providers should extend `ProviderBase` from `@unionkeyfe/cross-inpage-provider-core` and implement required methods. Register in the provider hub using `providerName`.
 
 ### Bridge Communication  
 Use `bridgeRequest()` method for wallet communication. All requests are scoped by provider name and include automatic timeout/error handling.
 
 ### Module Resolution
-Package imports use `@onekeyfe/` scoped naming. Jest is configured with module name mapping for internal package resolution during testing.
+Package imports use `@unionkeyfe/` scoped naming. Jest is configured with module name mapping for internal package resolution during testing.
 
 ### Error Handling
 Use Web3-compatible error objects. The system has built-in timeout management (10min default) and automatic cleanup of failed requests.

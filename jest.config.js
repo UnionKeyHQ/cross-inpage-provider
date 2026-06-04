@@ -2,10 +2,10 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   moduleNameMapper: {
-    '^@onekeyfe/cross-inpage-provider-events$': '<rootDir>/packages/events/cross-events.js',
-    '^@onekeyfe/cross-inpage-provider-errors$': '<rootDir>/packages/errors/src/index.ts',
-    '^@onekeyfe/cross-inpage-provider-types$': '<rootDir>/packages/types/src/index.ts',
-    '^@onekeyfe/(.*)$': '<rootDir>/packages/$1/src',
+    '^@unionkeyfe/cross-inpage-provider-events$': '<rootDir>/packages/events/cross-events.js',
+    '^@unionkeyfe/cross-inpage-provider-errors$': '<rootDir>/packages/errors/src/index.ts',
+    '^@unionkeyfe/cross-inpage-provider-types$': '<rootDir>/packages/types/src/index.ts',
+    '^@unionkeyfe/(.*)$': '<rootDir>/packages/$1/src',
   },
   testPathIgnorePatterns: [
     '/inpage-providers-hub/.*/universal/',

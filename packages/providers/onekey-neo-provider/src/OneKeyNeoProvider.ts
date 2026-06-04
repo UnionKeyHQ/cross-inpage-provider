@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
 import { ProviderNeoBase } from './ProviderNeoBase';
 import {
   INeoProviderMethods,
@@ -197,7 +197,7 @@ class NEOLineN3 {
 }
 
 /**
- * ProviderNeo is the core implementation that communicates with OneKey Wallet
+ * ProviderNeo is the core implementation that communicates with UnionKey Wallet
  */
 class ProviderNeo extends ProviderNeoBase implements INeoProviderMethods {
   constructor(props: IInpageProviderConfig & { timeout?: number }) {

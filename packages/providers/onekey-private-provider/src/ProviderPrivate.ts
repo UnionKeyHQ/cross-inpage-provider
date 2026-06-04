@@ -1,12 +1,12 @@
 import {
   IInjectedProviderNames,
   IInjectedProviderNamesStrings,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
-import { IInpageProviderConfig, ProviderBase, switchDefaultWalletNotification, switchNetworkNotification } from '@onekeyfe/cross-inpage-provider-core';
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
+import { IInpageProviderConfig, ProviderBase, switchDefaultWalletNotification, switchNetworkNotification } from '@unionkeyfe/cross-inpage-provider-core';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
 
-export interface IOneKeyWalletInfo {
+export interface IUnionKeyWalletInfo {
   enableExtContentScriptReloadButton?: boolean;
   platform?: string;
   version?: string;
@@ -80,7 +80,7 @@ class ProviderPrivate extends ProviderBase {
           if (!walletInfoLocal || (walletInfoLocal && walletInfoLocal.platformEnv.isExtension)) {
             try {
               localStorage.setItem(WALLET_INFO_LOACAL_KEY_V5, JSON.stringify(params));
-              this.notifyDefaultWalletChanged(params as IOneKeyWalletInfo)
+              this.notifyDefaultWalletChanged(params as IUnionKeyWalletInfo)
             } catch (e) {
               console.error(e);
             }
@@ -111,7 +111,7 @@ class ProviderPrivate extends ProviderBase {
     return this.bridgeRequest(data);
   }
 
-  notifyDefaultWalletChanged(params: IOneKeyWalletInfo) {
+  notifyDefaultWalletChanged(params: IUnionKeyWalletInfo) {
     let isDefaultWallet = !!params.isDefaultWallet
     if (isDefaultWallet) {
       const isExcludedWebsite = params.excludedDappList.some(i => i.startsWith(window.location.origin));

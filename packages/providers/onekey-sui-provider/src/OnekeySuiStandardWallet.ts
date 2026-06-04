@@ -7,7 +7,7 @@ import {
 } from '@mysten/wallet-standard';
 import mitt from 'mitt';
 
-import { hexToBytes } from '@onekeyfe/cross-inpage-provider-core';
+import { hexToBytes } from '@unionkeyfe/cross-inpage-provider-core';
 
 import { ALL_PERMISSION_TYPES } from './types';
 
@@ -69,7 +69,7 @@ enum Feature {
 
 class OnekeySuiStandardWallet implements Wallet {
   readonly version = '1.0.0' as const;
-  readonly _name = 'OneKey Wallet' as const;
+  readonly _name = 'UnionKey Wallet' as const;
   readonly provider: ProviderSui;
   readonly options?: WalletInfo;
 

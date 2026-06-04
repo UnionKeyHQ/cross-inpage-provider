@@ -4,14 +4,14 @@ import {
   IElectronWebView,
   IJsBridgeConfig,
   IJsBridgeMessagePayload,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 import { IWebViewWrapperRef } from './useWebViewBridge';
 
 import {
   JsBridgeBase,
   injectedFactory,
   appDebugLogger,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@unionkeyfe/cross-inpage-provider-core';
 
 class JsBridgeDesktopHost extends JsBridgeBase {
   constructor(config: IJsBridgeConfig) {

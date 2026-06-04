@@ -1,6 +1,6 @@
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
-import { ConsoleLike } from '@onekeyfe/cross-inpage-provider-types';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
+import { ConsoleLike } from '@unionkeyfe/cross-inpage-provider-types';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 
 import { ProviderBtcBase } from './ProviderBtcBase';
 import {
@@ -93,7 +93,7 @@ class ProviderBtc extends ProviderBtcBase implements IProviderBtc {
 
       this._handleAccountsChanged(accounts);
     } catch (error) {
-      this._log.error('OneKey: Failed to get initial state. Please report this bug.', error);
+      this._log.error('UnionKey: Failed to get initial state. Please report this bug.', error);
     } finally {
       this._initialized = true;
     }

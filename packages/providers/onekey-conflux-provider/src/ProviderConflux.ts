@@ -1,8 +1,8 @@
 import dequal from 'fast-deep-equal';
 
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
-import { web3Errors } from '@onekeyfe/cross-inpage-provider-errors';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
+import { web3Errors } from '@unionkeyfe/cross-inpage-provider-errors';
 
 import { ProviderConfluxBase } from './ProviderConfluxBase';
 import {
@@ -57,7 +57,7 @@ class ProviderConflux extends ProviderConfluxBase implements IProviderConflux {
       };
       this.emit(ProviderEvents.CONNECT, { chainId, networkId });
     } catch (error) {
-      this._log.error('OneKey: Failed to get initial state. Please report this bug.', error);
+      this._log.error('UnionKey: Failed to get initial state. Please report this bug.', error);
     } finally {
       this._initialized = true;
     }
@@ -122,7 +122,7 @@ class ProviderConflux extends ProviderConfluxBase implements IProviderConflux {
 
     if (!Array.isArray(accounts)) {
       this._log.error(
-        'Onekey: Received invalid accounts parameter. Please report this bug.',
+        'UnionKey: Received invalid accounts parameter. Please report this bug.',
         accounts,
       );
       _accounts = [];
@@ -130,7 +130,7 @@ class ProviderConflux extends ProviderConfluxBase implements IProviderConflux {
 
     for (const account of _accounts) {
       if (typeof account !== 'string') {
-        this._log.error('Onekey: Received non-string account. Please report this bug.', accounts);
+        this._log.error('UnionKey: Received non-string account. Please report this bug.', accounts);
         _accounts = [];
         break;
       }
@@ -161,7 +161,7 @@ class ProviderConflux extends ProviderConfluxBase implements IProviderConflux {
       !networkId ||
       typeof networkId !== 'string'
     ) {
-      this._log.error('Onekey: Received invalid network parameters. Please report this bug.', {
+      this._log.error('UnionKey: Received invalid network parameters. Please report this bug.', {
         chainId,
         networkId,
       });

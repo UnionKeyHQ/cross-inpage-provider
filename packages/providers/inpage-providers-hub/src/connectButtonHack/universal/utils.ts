@@ -1,5 +1,5 @@
-import { Logger } from '@onekeyfe/cross-inpage-provider-core';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { Logger } from '@unionkeyfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { Selector } from './type';
 
 export const universalLog = new Logger('universal');

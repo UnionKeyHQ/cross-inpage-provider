@@ -3,7 +3,7 @@ import providersHubUtils from '../utils/providersHubUtils';
 import { FIXED_ADDITIONAL_POST_BODY } from './consts';
 import hijackMethods from './hijackMethods';
 import hyperLiquidDappDetecter from './hyperLiquidDappDetecter';
-import hyperLiquidOneKeyWalletApi from './hyperLiquidOneKeyWalletApi';
+import hyperLiquidUnionKeyWalletApi from './hyperLiquidUnionKeyWalletApi';
 import hyperLiquidApiUtils from './hyperLiquidServerApi';
 
 const originalConsoleLog = providersHubUtils.consoleLog;
@@ -60,7 +60,7 @@ export class BuiltInPerpInjected {
     const isPlaceOrderRequest = hyperLiquidApiUtils.isPlaceOrderRequest({ jsonBody, url });
 
     if (isPlaceOrderRequest) {
-      await hyperLiquidOneKeyWalletApi.checkHyperliquidUserApproveStatus({
+      await hyperLiquidUnionKeyWalletApi.checkHyperliquidUserApproveStatus({
         shouldApproveBuilderFee: true,
       });
       // TODO remove
@@ -142,8 +142,8 @@ export class BuiltInPerpInjected {
                     | undefined;
                   if (resData?.status === 'err') {
                     originalConsoleLog('BuiltInPerpInjected__PlaceOrderRequest__Error1', resData);
-                    void hyperLiquidOneKeyWalletApi.clearUserMaxBuilderFeeCache();
-                    void hyperLiquidOneKeyWalletApi.logHyperLiquidServerApiAction({
+                    void hyperLiquidUnionKeyWalletApi.clearUserMaxBuilderFeeCache();
+                    void hyperLiquidUnionKeyWalletApi.logHyperLiquidServerApiAction({
                       payload: jsonBody,
                       error: resData,
                     });
@@ -167,7 +167,7 @@ export class BuiltInPerpInjected {
                   */
                   if (resData?.status === 'ok') {
                     originalConsoleLog('BuiltInPerpInjected__PlaceOrderRequest__Success', resData);
-                    void hyperLiquidOneKeyWalletApi.logHyperLiquidServerApiAction({
+                    void hyperLiquidUnionKeyWalletApi.logHyperLiquidServerApiAction({
                       payload: jsonBody,
                     });
                   }

@@ -11,7 +11,7 @@ export const switchDefaultWalletNotification = (isDefaultWallet: boolean) => {
     instance.dismiss();
     instance = null;
   }
-  const text = isDefaultWallet ? 'OneKey is your default wallet now.' : 'OneKey Default Canceled';
+  const text = isDefaultWallet ? 'UnionKey is your default wallet now.' : 'UnionKey Default Canceled';
   instance = notification({
     dismissible: true,
     duration: 0,

@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { fakeDebugLogger, consts } from '@onekeyfe/cross-inpage-provider-core';
+import { fakeDebugLogger, consts } from '@unionkeyfe/cross-inpage-provider-core';
 
 import {
   IJsBridgeConfig,
   IJsBridgeMessagePayload,
   IPostMessageEventData,
   IOptionsWithDebugLogger,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 import {
   JsBridgeBase,
   injectedProviderReceiveHandler,
   injectJsBridge,
-} from '@onekeyfe/cross-inpage-provider-core';
+} from '@unionkeyfe/cross-inpage-provider-core';
 
 const { JS_BRIDGE_MESSAGE_DIRECTION, JS_BRIDGE_MESSAGE_EXT_CHANNEL } = consts;
 

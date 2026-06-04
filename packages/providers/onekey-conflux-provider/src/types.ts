@@ -1,4 +1,4 @@
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 import { ProviderConfluxBase } from './ProviderConfluxBase';
 
@@ -50,7 +50,7 @@ export interface RequestArguments {
 export interface IProviderConflux extends ProviderConfluxBase {
   readonly isConfluxPortal: true;
   readonly isFluent: true;
-  readonly isOneKey: true;
+  readonly isUnionKey: true;
 
   isConnected(): boolean;
 

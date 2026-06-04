@@ -13,7 +13,7 @@ import {
   registerWallet,
   UserResponseStatus,
 } from '@aptos-labs/wallet-standard';
-import { stripHexPrefix, bytesToHex } from '@onekeyfe/cross-inpage-provider-core';
+import { stripHexPrefix, bytesToHex } from '@unionkeyfe/cross-inpage-provider-core';
 
 import type {
   Account,
@@ -79,13 +79,13 @@ export function registerAptosWallet(provider: ProviderAptos, options: WalletInfo
 }
 
 export class AptosStandardProvider implements AptosWallet {
-  readonly url: string = 'https://onekey.so';
+  readonly url: string = 'https://unionkey.io';
 
   readonly options?: WalletInfo;
 
   readonly version = '1.0.0';
 
-  readonly name: string = 'OneKey';
+  readonly name: string = 'UnionKey';
 
   icon: WalletIcon = 'data:image/svg+xml;base64,';
   provider: ProviderAptos;

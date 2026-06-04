@@ -1,4 +1,4 @@
-﻿/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/restrict-plus-operands,@typescript-eslint/ban-ts-comment */
 import React from 'react';
@@ -10,7 +10,7 @@ import {
   SignMessagesResult,
   SignInResult,
   SignTransactionsResult,
-} from '@onekeyfe/onekey-near-provider';
+} from '@unionkeyfe/unionkey-near-provider';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import * as NearApi from 'near-api-js';
 import { random } from 'lodash';

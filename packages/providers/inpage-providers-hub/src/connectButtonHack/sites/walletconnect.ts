@@ -4,10 +4,10 @@ import {
   detectQrcodeFromSvg,
   hackConnectButton,
 } from '../hackConnectButton';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO } from '../consts';
 import type { IWindowOneKeyHub } from '../../injectWeb3Provider';
-import { commonLogger } from '@onekeyfe/cross-inpage-provider-core';
+import { commonLogger } from '@unionkeyfe/cross-inpage-provider-core';
 
 const onekeyBtnBg = 'rgb(0, 184, 18)';
 function setOnClickToConnectWallet({ element, uri }: { element: HTMLElement; uri: string }) {

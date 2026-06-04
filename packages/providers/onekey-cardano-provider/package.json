@@ -1,12 +1,12 @@
 {
-  "name": "@onekeyfe/onekey-cardano-provider",
+  "name": "@unionkeyfe/unionkey-cardano-provider",
   "version": "2.2.71",
   "keywords": [
     "cross-inpage-provider",
     "cardano"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "UnionKeyHQ",
+  "repository": "https://github.com/UnionKeyHQ/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -28,9 +28,9 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-core": "2.2.71",
-    "@onekeyfe/cross-inpage-provider-errors": "2.2.71",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.71",
-    "@onekeyfe/extension-bridge-injected": "2.2.71"
+    "@unionkeyfe/cross-inpage-provider-core": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-errors": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-types": "2.2.71",
+    "@unionkeyfe/extension-bridge-injected": "2.2.71"
   }
 }

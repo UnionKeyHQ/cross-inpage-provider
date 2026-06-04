@@ -1,11 +1,11 @@
 {
-  "name": "@onekeyfe/onekey-eth-provider",
+  "name": "@unionkeyfe/unionkey-eth-provider",
   "version": "2.2.71",
   "keywords": [
     "cross-inpage-provider"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "UnionKeyHQ",
+  "repository": "https://github.com/UnionKeyHQ/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -27,10 +27,10 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-core": "2.2.71",
-    "@onekeyfe/cross-inpage-provider-errors": "2.2.71",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.71",
-    "@onekeyfe/extension-bridge-injected": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-core": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-errors": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-types": "2.2.71",
+    "@unionkeyfe/extension-bridge-injected": "2.2.71",
     "eth-rpc-errors": "^4.0.3",
     "uuid": "^8.3.2"
   },

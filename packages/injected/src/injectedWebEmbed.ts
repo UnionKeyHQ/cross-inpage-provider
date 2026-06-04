@@ -4,9 +4,9 @@ import {
   defineWindowProperty,
   injectedProviderReceiveHandler,
   injectJsBridge,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { JsBridgeNativeInjected } from '@onekeyfe/native-bridge-injected';
-import { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
+} from '@unionkeyfe/cross-inpage-provider-core';
+import { JsBridgeNativeInjected } from '@unionkeyfe/native-bridge-injected';
+import { ProviderPrivate } from '@unionkeyfe/unionkey-private-provider';
 
 const bridge = () =>
   new JsBridgeNativeInjected({

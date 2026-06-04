@@ -1,4 +1,4 @@
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 import { WALLET_CONNECT_INFO, WALLET_NAMES } from '../consts';
 import {
   findIconAndNameAcrossContainers,
@@ -4342,7 +4342,7 @@ export const sitesConfig: SitesInfo[] = [
           afterUpdate(textNode) {
             const ledgerInput = document.getElementById('connect-ledger-wallet-with-phantom');
             if (textNode) {
-              textNode.textContent = 'OneKey Hardware & Phantom';
+              textNode.textContent = 'UnionKey Hardware & Phantom';
             }
             const label = ledgerInput?.parentElement as HTMLLabelElement;
             if (label) {
@@ -4498,7 +4498,7 @@ export const sitesConfig: SitesInfo[] = [
           },
           afterUpdate(textNode, iconNode) {
             if (textNode) {
-              textNode.textContent = 'OneKey&UniSat';
+              textNode.textContent = 'UnionKey&UniSat';
             }
             if (iconNode) {
               iconNode.style.width = '28px';
@@ -5074,7 +5074,7 @@ export const sitesConfig: SitesInfo[] = [
           },
           afterUpdate(textNode) {
             if (textNode) {
-              textNode.textContent = 'Onekey&Phantom';
+              textNode.textContent = 'UnionKey&Phantom';
             }
           },
         },

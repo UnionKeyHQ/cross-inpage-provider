@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
-import { IInjectedProviderNames } from '@onekeyfe/cross-inpage-provider-types';
+import { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
+import { IInjectedProviderNames } from '@unionkeyfe/cross-inpage-provider-types';
 
 import messages from './messages';
 import { ConsoleLike } from './utils';

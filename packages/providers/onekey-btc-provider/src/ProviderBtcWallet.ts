@@ -1,4 +1,4 @@
-import { getOrCreateExtInjectedJsBridge } from "@onekeyfe/extension-bridge-injected";
+import { getOrCreateExtInjectedJsBridge } from "@unionkeyfe/extension-bridge-injected";
 import { ProviderBtc } from "./ProviderBtc";
 import {
   Fees,
@@ -60,7 +60,7 @@ class ProviderBtcWallet extends ProviderBtc implements IProviderBtcWallet {
 
   getWalletProviderName(): Promise<string> {
     this._state.isBtcWalletProvider = true;
-    return Promise.resolve("OneKey");
+    return Promise.resolve("UnionKey");
   }
 
   async getAddress(): Promise<string> {

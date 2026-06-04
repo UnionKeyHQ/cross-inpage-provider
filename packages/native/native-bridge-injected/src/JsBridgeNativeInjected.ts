@@ -1,6 +1,6 @@
-import { IJsBridgeMessagePayload } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsBridgeMessagePayload } from '@unionkeyfe/cross-inpage-provider-types';
 
-import { JsBridgeBase } from '@onekeyfe/cross-inpage-provider-core';
+import { JsBridgeBase } from '@unionkeyfe/cross-inpage-provider-core';
 
 class JsBridgeNativeInjected extends JsBridgeBase {
   sendAsString = true;

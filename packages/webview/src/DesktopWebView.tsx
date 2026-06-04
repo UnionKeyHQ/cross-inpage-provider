@@ -10,11 +10,11 @@ import React, {
 } from 'react';
 
 import { LoadURLOptions } from 'electron';
-import { consts } from '@onekeyfe/cross-inpage-provider-core';
+import { consts } from '@unionkeyfe/cross-inpage-provider-core';
 import {
   IElectronWebView,
   InpageProviderWebViewProps,
-} from '@onekeyfe/cross-inpage-provider-types';
+} from '@unionkeyfe/cross-inpage-provider-types';
 
 import { JsBridgeDesktopHost } from './JsBridgeDesktopHost';
 import { useIsIpcReady } from './useIsIpcReady';

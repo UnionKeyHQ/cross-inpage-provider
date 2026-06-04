@@ -2,8 +2,8 @@
 import {
   IInpageProviderConfig,
   IProviderBaseConnectionStatus,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
+} from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
 import { ProviderTonBase } from './ProviderTonBase';
 import type * as TypeUtils from './type-utils';
 import {
@@ -136,9 +136,9 @@ export class ProviderTon extends ProviderTonBase implements IProviderTon {
     ],
   };
   walletInfo?: WalletInfo = {
-    name: 'OneKey',
+    name: 'UnionKey',
     image: 'https://common.onekey-asset.com/logo/onekey-x288.png',
-    about_url: 'https://onekey.so',
+    about_url: 'https://unionkey.io',
   };
   protocolVersion = 2;
   isWalletBrowser = false;

@@ -1,5 +1,5 @@
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 
 import { ProviderBtcBase } from './ProviderBtcBase';
 
@@ -132,7 +132,7 @@ export interface Chain {
 }
 
 export interface IProviderBtc extends ProviderBtcBase {
-  readonly isOneKey: boolean;
+  readonly isUnionKey: boolean;
 
   requestAccounts(): Promise<string[]>;
   disconnect(): Promise<void>;

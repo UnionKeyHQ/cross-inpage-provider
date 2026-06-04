@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import { isInSameOriginIframe } from '@onekeyfe/cross-inpage-provider-core';
+import { isInSameOriginIframe } from '@unionkeyfe/cross-inpage-provider-core';
 import { styleContent } from "./style";
 
 enum EHostSecurityLevel {
@@ -99,7 +99,7 @@ class ShadowModal {
     footer.innerHTML = `<span>${sourceMessage}</span>
 		<div class="onekey-inject-logo">
       <div class="onekey-inject-logo-content"></div>
-			<span>OneKey</span>
+			<span>UnionKey</span>
 		</div>`;
 
     // 组装

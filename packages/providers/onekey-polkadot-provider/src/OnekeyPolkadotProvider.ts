@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable tsdoc/syntax */
-import type { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
+import type { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
 import { ProviderPolkadotBase } from './ProviderPolkadotBase';
 import type * as TypeUtils from './type-utils';
-import type { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import type { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 import type { JsonRpcResponse } from '@polkadot/rpc-provider/types';
 
 import {
@@ -224,7 +224,7 @@ class ProviderPolkadot extends ProviderPolkadotBase implements IProviderPolkadot
   private createMessage(payload: IMessagePayload): IPostMessage {
     return {
       id: 2,
-      origin: 'OneKey Polkadot Provider',
+      origin: 'UnionKey Polkadot Provider',
       ...payload,
     };
   }
@@ -290,7 +290,7 @@ class ProviderPolkadot extends ProviderPolkadotBase implements IProviderPolkadot
 
       this.postResponse({
         id: 1,
-        origin: 'OneKey Polkadot Provider',
+        origin: 'UnionKey Polkadot Provider',
         signature: result.signature,
       });
 
@@ -312,7 +312,7 @@ class ProviderPolkadot extends ProviderPolkadotBase implements IProviderPolkadot
 
       this.postResponse({
         id: 1,
-        origin: 'OneKey Polkadot Provider',
+        origin: 'UnionKey Polkadot Provider',
         signature: result.signature,
       });
 
@@ -370,14 +370,14 @@ class ProviderPolkadot extends ProviderPolkadotBase implements IProviderPolkadot
   }
 }
 
-const registerPolkadot = (provider: ProviderPolkadot, name = 'OneKey', version = '1.0.0') => {
+const registerPolkadot = (provider: ProviderPolkadot, name = 'UnionKey', version = '1.0.0') => {
   try {
     const enableFn = async (originName: string): Promise<Injected> => {
       await provider.web3Enable(originName);
       return new OneKeyInjected(provider);
     };
 
-    injectExtension(enableFn, { name: name ?? 'OneKey', version: version ?? '1.0.0' });
+    injectExtension(enableFn, { name: name ?? 'UnionKey', version: version ?? '1.0.0' });
   } catch (error) {
     console.error(error);
   }

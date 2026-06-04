@@ -1,11 +1,11 @@
 {
-  "name": "@onekeyfe/extension-bridge-injected",
+  "name": "@unionkeyfe/extension-bridge-injected",
   "version": "2.2.71",
   "keywords": [
     "cross-inpage-provider"
   ],
-  "author": "dev-fe@onekey.so",
-  "repository": "https://github.com/OneKeyHQ/cross-inpage-provider",
+  "author": "UnionKeyHQ",
+  "repository": "https://github.com/UnionKeyHQ/cross-inpage-provider",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
@@ -27,7 +27,7 @@
     "start": "tsc --watch"
   },
   "dependencies": {
-    "@onekeyfe/cross-inpage-provider-core": "2.2.71",
-    "@onekeyfe/cross-inpage-provider-types": "2.2.71"
+    "@unionkeyfe/cross-inpage-provider-core": "2.2.71",
+    "@unionkeyfe/cross-inpage-provider-types": "2.2.71"
   }
 }

@@ -5,43 +5,43 @@ import {
   defineWindowProperty,
   JsBridgeBase,
   isOneKeyWebsite,
-} from '@onekeyfe/cross-inpage-provider-core';
-import { ProviderAlgo } from '@onekeyfe/onekey-algo-provider';
-import { ProviderAlph, registerAlephiumProvider } from '@onekeyfe/onekey-alph-provider';
+} from '@unionkeyfe/cross-inpage-provider-core';
+import { ProviderAlgo } from '@unionkeyfe/unionkey-algo-provider';
+import { ProviderAlph, registerAlephiumProvider } from '@unionkeyfe/unionkey-alph-provider';
 import {
   ProviderAptos,
   ProviderAptosMartian,
   registerAptosWallet,
-} from '@onekeyfe/onekey-aptos-provider';
-import { ProviderBfc, registerBfcWallet } from '@onekeyfe/onekey-bfc-provider';
-import { ProviderBtc, ProviderBtcWallet } from '@onekeyfe/onekey-btc-provider';
-import { defineWindowCardanoProperty, ProviderCardano } from '@onekeyfe/onekey-cardano-provider';
-import { ProviderConflux } from '@onekeyfe/onekey-conflux-provider';
-import { BBNProviderCosmos, ProviderCosmos } from '@onekeyfe/onekey-cosmos-provider';
-import { ProviderStellar, ProviderStellarHana } from '@onekeyfe/onekey-stellar-provider';
+} from '@unionkeyfe/unionkey-aptos-provider';
+import { ProviderBfc, registerBfcWallet } from '@unionkeyfe/unionkey-bfc-provider';
+import { ProviderBtc, ProviderBtcWallet } from '@unionkeyfe/unionkey-btc-provider';
+import { defineWindowCardanoProperty, ProviderCardano } from '@unionkeyfe/unionkey-cardano-provider';
+import { ProviderConflux } from '@unionkeyfe/unionkey-conflux-provider';
+import { BBNProviderCosmos, ProviderCosmos } from '@unionkeyfe/unionkey-cosmos-provider';
+import { ProviderStellar, ProviderStellarHana } from '@unionkeyfe/unionkey-stellar-provider';
 import {
   METAMASK_UUID,
   MetaMaskSDK,
   ProviderEthereum,
   registerEIP6963Provider,
   shimWeb3,
-} from '@onekeyfe/onekey-eth-provider';
-import { emitNeoReadyEvent, NEOLineN3, ProviderNeo } from '@onekeyfe/onekey-neo-provider';
-import { ProviderNostr } from '@onekeyfe/onekey-nostr-provider';
-import { ProviderPolkadot, registerPolkadot } from '@onekeyfe/onekey-polkadot-provider';
-import { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
-import { ProviderScdo } from '@onekeyfe/onekey-scdo-provider';
-import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@onekeyfe/onekey-solana-provider';
-import { ProviderSui, registerSuiWallet } from '@onekeyfe/onekey-sui-provider';
-import { createTonProviderOpenMask, ProviderTon } from '@onekeyfe/onekey-ton-provider';
-import { ProviderTron, registerTIP6963Provider } from '@onekeyfe/onekey-tron-provider';
-import { ProviderWebln } from '@onekeyfe/onekey-webln-provider';
+} from '@unionkeyfe/unionkey-eth-provider';
+import { emitNeoReadyEvent, NEOLineN3, ProviderNeo } from '@unionkeyfe/unionkey-neo-provider';
+import { ProviderNostr } from '@unionkeyfe/unionkey-nostr-provider';
+import { ProviderPolkadot, registerPolkadot } from '@unionkeyfe/unionkey-polkadot-provider';
+import { ProviderPrivate } from '@unionkeyfe/unionkey-private-provider';
+import { ProviderScdo } from '@unionkeyfe/unionkey-scdo-provider';
+import { ProviderSolana, registerSolanaWallet, WalletIcon } from '@unionkeyfe/unionkey-solana-provider';
+import { ProviderSui, registerSuiWallet } from '@unionkeyfe/unionkey-sui-provider';
+import { createTonProviderOpenMask, ProviderTon } from '@unionkeyfe/unionkey-ton-provider';
+import { ProviderTron, registerTIP6963Provider } from '@unionkeyfe/unionkey-tron-provider';
+import { ProviderWebln } from '@unionkeyfe/unionkey-webln-provider';
 import builtInPerpInjected from './builtInPerpInjected';
 import { hackAllConnectButtons } from './connectButtonHack';
 import { WALLET_CONNECT_INFO } from './connectButtonHack/consts';
 import { detectWebsiteRiskLevel, listenPageFocus } from './detectRiskWebsite';
 import { injectFloatingButton } from './floatingButton';
-import hyperLiquidOneKeyWalletApi from './builtInPerpInjected/hyperLiquidOneKeyWalletApi';
+import hyperLiquidUnionKeyWalletApi from './builtInPerpInjected/hyperLiquidUnionKeyWalletApi';
 import { injectClipboardOverride } from './clipboardOverride';
 
 export type IWindowOneKeyHub = {
@@ -113,7 +113,7 @@ function injectWeb3Provider({
     bridge,
   });
 
-  void hyperLiquidOneKeyWalletApi.initHyperliquidBuilderFeeConfig(ethereum);
+  void hyperLiquidUnionKeyWalletApi.initHyperliquidBuilderFeeConfig(ethereum);
 
   const $private = new ProviderPrivate({
     bridge,

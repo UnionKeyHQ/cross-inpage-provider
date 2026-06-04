@@ -1,4 +1,4 @@
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
 import { ProviderAlgoBase } from './ProviderAlgoBase';
 import {
   AlgoProviderEventsMap,

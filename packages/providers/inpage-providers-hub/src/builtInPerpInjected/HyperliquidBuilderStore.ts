@@ -11,7 +11,7 @@ const storageKeys = {
 export type IHyperliquidBuilderCustomSettings = {
   hideNavBar?: boolean;
   hideNavBarConnectButton?: boolean;
-  hideNotOneKeyWalletConnectButton?: boolean;
+  hideNotUnionKeyWalletConnectButton?: boolean;
 };
 
 export class HyperliquidBuilderStore {
@@ -56,7 +56,7 @@ export class HyperliquidBuilderStore {
     | {
         hideNavBar?: boolean;
         hideNavBarConnectButton?: boolean;
-        hideNotOneKeyWalletConnectButton?: boolean;
+        hideNotUnionKeyWalletConnectButton?: boolean;
       }
     | undefined {
     if (this._customSettings === undefined) {
@@ -88,7 +88,7 @@ export class HyperliquidBuilderStore {
       }
     | undefined {
     if (
-      HyperliquidBuilderStore?.storeUpdateByOneKeyWallet &&
+      HyperliquidBuilderStore?.storeUpdateByUnionKeyWallet &&
       HyperliquidBuilderStore?.expectBuilderAddress &&
       isNumber(HyperliquidBuilderStore?.expectMaxBuilderFee) &&
       HyperliquidBuilderStore?.expectMaxBuilderFee >= 0
@@ -105,5 +105,5 @@ export class HyperliquidBuilderStore {
     this.store.flush();
   }
 
-  static storeUpdateByOneKeyWallet = false;
+  static storeUpdateByUnionKeyWallet = false;
 }

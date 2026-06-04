@@ -1,4 +1,4 @@
-import { hexToBytes } from '@onekeyfe/cross-inpage-provider-core';
+import { hexToBytes } from '@unionkeyfe/cross-inpage-provider-core';
 import mitt, { Emitter } from 'mitt';
 import {
   IdentifierArray,
@@ -51,7 +51,7 @@ enum Feature {
 
 class OnekeyBfcStandardWallet implements Wallet {
   readonly version = '1.0.0' as const;
-  readonly _name = 'OneKey Wallet' as const;
+  readonly _name = 'UnionKey Wallet' as const;
   readonly provider: ProviderBfc;
   readonly options?: WalletInfo;
 

@@ -1,4 +1,4 @@
-import type { ProviderPrivate } from '@onekeyfe/onekey-private-provider';
+import type { ProviderPrivate } from '@unionkeyfe/unionkey-private-provider';
 
 // Save original references immediately at module load time,
 // before any DApp code can tamper with them.
@@ -14,7 +14,7 @@ function createNotAllowedError(): DOMException {
 
 export function injectClipboardOverride($private: ProviderPrivate): void {
   if (typeof navigator === 'undefined') return;
-  console.log('[OneKey] Clipboard override: initializing');
+  console.log('[UnionKey] Clipboard override: initializing');
 
   // First decision per (origin, type) sticks for the rest of the page session.
   // Matches Chrome native UX: deny once → deny until reload. Read and write are
@@ -27,16 +27,16 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
 
   const clipboardProxy = {
     async readText(): Promise<string> {
-      console.log('[OneKey] Clipboard: readText() intercepted');
+      console.log('[UnionKey] Clipboard: readText() intercepted');
       const key = `${window.location.origin}:read`;
 
       const decision = sessionDecisions.get(key);
       if (decision === 'deny') {
-        console.log('[OneKey] Clipboard: readText() - session-denied, short-circuit');
+        console.log('[UnionKey] Clipboard: readText() - session-denied, short-circuit');
         throw createNotAllowedError();
       }
       if (decision === 'allow') {
-        console.log('[OneKey] Clipboard: readText() - session-allowed, native API');
+        console.log('[UnionKey] Clipboard: readText() - session-allowed, native API');
         if (!originalClipboard) {
           throw new DOMException('Clipboard API not available', 'NotSupportedError');
         }
@@ -45,18 +45,18 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
 
       const existing = pendingRequests.get(key) as Promise<string> | undefined;
       if (existing) {
-        console.log('[OneKey] Clipboard: readText() - coalescing with in-flight');
+        console.log('[UnionKey] Clipboard: readText() - coalescing with in-flight');
         return existing;
       }
 
-      console.log('[OneKey] Clipboard: readText() requesting permission');
+      console.log('[UnionKey] Clipboard: readText() requesting permission');
       const promise = (async (): Promise<string> => {
         try {
           const result = await $private.request({
             method: 'wallet_requestClipboardPermission',
             params: { type: 'read' },
           }) as { allowed?: boolean; content?: string } | undefined;
-          console.log('[OneKey] Clipboard: readText() permission result:', result?.allowed);
+          console.log('[UnionKey] Clipboard: readText() permission result:', result?.allowed);
           const allowed = Boolean(result?.allowed);
           sessionDecisions.set(key, allowed ? 'allow' : 'deny');
           if (!allowed) throw createNotAllowedError();
@@ -84,16 +84,16 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
       return [new ClipboardItem({ 'text/plain': blob })];
     },
     async writeText(text: string): Promise<void> {
-      console.log('[OneKey] Clipboard: writeText() intercepted');
+      console.log('[UnionKey] Clipboard: writeText() intercepted');
       const key = `${window.location.origin}:write`;
 
       const decision = sessionDecisions.get(key);
       if (decision === 'deny') {
-        console.log('[OneKey] Clipboard: writeText() - session-denied, short-circuit');
+        console.log('[UnionKey] Clipboard: writeText() - session-denied, short-circuit');
         throw createNotAllowedError();
       }
       if (decision === 'allow') {
-        console.log('[OneKey] Clipboard: writeText() - session-allowed, native API');
+        console.log('[UnionKey] Clipboard: writeText() - session-allowed, native API');
         if (!originalClipboard) {
           throw new DOMException('Clipboard API not available', 'NotSupportedError');
         }
@@ -102,18 +102,18 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
 
       const existing = pendingRequests.get(key) as Promise<void> | undefined;
       if (existing) {
-        console.log('[OneKey] Clipboard: writeText() - coalescing with in-flight');
+        console.log('[UnionKey] Clipboard: writeText() - coalescing with in-flight');
         return existing;
       }
 
-      console.log('[OneKey] Clipboard: writeText() requesting permission');
+      console.log('[UnionKey] Clipboard: writeText() requesting permission');
       const promise = (async (): Promise<void> => {
         try {
           const result = await $private.request({
             method: 'wallet_requestClipboardPermission',
             params: { type: 'write', text },
           }) as { allowed?: boolean } | undefined;
-          console.log('[OneKey] Clipboard: writeText() permission result:', result?.allowed);
+          console.log('[UnionKey] Clipboard: writeText() permission result:', result?.allowed);
           const allowed = Boolean(result?.allowed);
           sessionDecisions.set(key, allowed ? 'allow' : 'deny');
           if (!allowed) throw createNotAllowedError();
@@ -170,7 +170,7 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
       configurable: false,
       enumerable: true,
     });
-    console.log('[OneKey] Clipboard override: success (navigator proxy)');
+    console.log('[UnionKey] Clipboard override: success (navigator proxy)');
   } catch {
     try {
       Object.defineProperty(navigator, 'clipboard', {
@@ -178,9 +178,9 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
         configurable: false,
         enumerable: true,
       });
-      console.log('[OneKey] Clipboard override: success (clipboard direct)');
+      console.log('[UnionKey] Clipboard override: success (clipboard direct)');
     } catch (e) {
-      console.warn('[OneKey] Clipboard override: FAILED - clipboard access is NOT protected', e);
+      console.warn('[UnionKey] Clipboard override: FAILED - clipboard access is NOT protected', e);
     }
   }
 
@@ -195,7 +195,7 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
         ): boolean {
           const cmd = command.toLowerCase();
           if (cmd === 'copy' || cmd === 'paste') {
-            console.log(`[OneKey] Clipboard: execCommand('${cmd}') blocked`);
+            console.log(`[UnionKey] Clipboard: execCommand('${cmd}') blocked`);
             return false;
           }
           return originalExecCommand(command, showUI, value);
@@ -203,7 +203,7 @@ export function injectClipboardOverride($private: ProviderPrivate): void {
         configurable: false,
         writable: false,
       });
-      console.log('[OneKey] Clipboard override: execCommand locked');
+      console.log('[UnionKey] Clipboard override: execCommand locked');
     } catch {
       // Fallback to simple assignment if defineProperty fails
       document.execCommand = function (

@@ -1,4 +1,4 @@
-﻿import type { TronWeb } from '@onekeyfe/onekey-tron-provider';
+import type { TronWeb } from '@unionkeyfe/unionkey-tron-provider';
 
 export interface IProviderApi {
   isUnionKey?: boolean;

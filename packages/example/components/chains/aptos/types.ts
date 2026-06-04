@@ -1,4 +1,4 @@
-import type { ProviderAptos } from '@onekeyfe/onekey-aptos-provider';
+import type { ProviderAptos } from '@unionkeyfe/unionkey-aptos-provider';
 
 export type IProviderApi = ProviderAptos
 

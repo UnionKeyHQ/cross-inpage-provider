@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { ProviderBase } from '@onekeyfe/cross-inpage-provider-core'
+import { ProviderBase } from '@unionkeyfe/cross-inpage-provider-core'
 import { ProviderCardanoBase } from './ProviderCardanoBase'
-import { IInpageProviderConfig } from '@onekeyfe/cross-inpage-provider-core';
-import { getOrCreateExtInjectedJsBridge } from '@onekeyfe/extension-bridge-injected';
+import { IInpageProviderConfig } from '@unionkeyfe/cross-inpage-provider-core';
+import { getOrCreateExtInjectedJsBridge } from '@unionkeyfe/extension-bridge-injected';
 import { isWalletEventMethodMatch } from './utils'
-import { IJsonRpcRequest } from '@onekeyfe/cross-inpage-provider-types';
+import { IJsonRpcRequest } from '@unionkeyfe/cross-inpage-provider-types';
 import { Cbor, Bytes, Cip30DataSignature, Cip30Wallet, NetworkId, Paginate, WalletApi } from './types'
 import * as TypeUtils from './type-utils'
 
@@ -153,7 +153,7 @@ class ProviderCardano extends ProviderCardanoBase implements IProviderCardano {
   walletInfo(): Cip30Wallet {
     return {
       apiVersion: '0.1.0',
-      name: 'OneKey',
+      name: 'UnionKey',
       icon: 'https://theme.zdassets.com/theme_assets/10237731/cd8f795ce97bdd7657dd4fb4b19fde3f32b50349.png',
       isEnabled: () => Promise.resolve(true),
       enable: () => this.enable(),
