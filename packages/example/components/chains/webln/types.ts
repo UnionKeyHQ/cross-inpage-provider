@@ -1,4 +1,4 @@
-export interface GetInfoResponse {
+﻿export interface GetInfoResponse {
   node: {
     alias: string;
     pubkey: string;
@@ -10,7 +10,7 @@ export interface GetInfoResponse {
 }
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isUnionKey?: boolean;
   on(event: string, listener: (...args: any[]) => void): this;
   off(event: string, listener: (...args: any[]) => void): this;
   enable(): Promise<void>;

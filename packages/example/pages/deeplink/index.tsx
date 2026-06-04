@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unused-vars */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unused-vars */
 import React from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../styles/Home.module.css';
@@ -62,11 +62,11 @@ export default function DeepLinkTest() {
         <ul className="list-disc pl-5">
           {[
             {
-              href: `https://app.onekey.so/wc/connect?uri=${uriEncoded}`,
+              href: `https://app.unionkey.io/wc/connect?uri=${uriEncoded}`,
               text: 'UniversalLink (full link)',
             },
             {
-              href: 'https://app.onekey.so/account/0xA9b4d559A98ff47C83B74522b7986146538cD4dF',
+              href: 'https://app.unionkey.io/account/0xA9b4d559A98ff47C83B74522b7986146538cD4dF',
               text: 'UniversalLink (account)',
             },
             { href: 'wc://', text: 'wc:// (empty link)' },

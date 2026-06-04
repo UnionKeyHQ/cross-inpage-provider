@@ -1,5 +1,5 @@
-export interface IProviderApi {
-  isOneKey?: boolean;
+﻿export interface IProviderApi {
+  isUnionKey?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
 }
 

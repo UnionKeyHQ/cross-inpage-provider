@@ -1,4 +1,4 @@
-name: deploy-dapp-example-web
+﻿name: deploy-dapp-example-web
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      TEST_ENDPOINT: dapp-example.onekeytest.com
+      TEST_ENDPOINT: dapp-example.unionkey.io
     steps:
       - uses: actions/checkout@v4
 

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+﻿/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
@@ -155,9 +155,9 @@ export default function ConnectButton<T>({
                 {!wallets ||
                   (wallets.length === 0 && (
                     <DialogDescription>
-                      没有钱包可用，请安装 OneKey Extension
-                      <a target="_blank" href={'https://www.onekey.so/download/'}>
-                        Install OneKey Extension →
+                      没有钱包可用，请安装 UnionKey Extension
+                      <a target="_blank" href={'https://unionkey.io/desktop'}>
+                        Install UnionKey Extension →
                       </a>
                     </DialogDescription>
                   ))}

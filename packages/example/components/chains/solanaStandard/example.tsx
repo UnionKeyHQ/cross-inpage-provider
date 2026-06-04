@@ -1,4 +1,4 @@
-/* eslint-disable no-unsafe-optional-chaining */
+﻿/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
 require('@solana/wallet-adapter-react-ui/styles.css');
 import { dapps } from './dapps.config';
@@ -162,7 +162,7 @@ function Example() {
                 nonce: 'oBbLoEldZs',
                 chainId: 'solana:mainnet',
                 issuedAt: currentDateTime,
-                resources: ['https://onekey.so'],
+                resources: ['https://unionkey.io'],
               }),
             );
           }}

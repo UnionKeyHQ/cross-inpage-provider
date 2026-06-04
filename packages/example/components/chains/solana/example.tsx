@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
 import { dapps } from './dapps.config';
 import ConnectButton from '../../connect/ConnectButton';
 import { useEffect, useMemo, useRef } from 'react';
@@ -27,7 +27,7 @@ export default function Example() {
     },
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.solana',
     },
     {
@@ -184,7 +184,7 @@ export default function Example() {
         />
           <ApiPayload
           title="solSignOffchainMessage"
-          description="签名消息(OneKey 私有方法)"
+          description="签名消息(UnionKey private method)"
           presupposeParams={params.signMessage}
           onExecute={async (request: string) => {
             return await provider?.solSignOffchainMessage(Buffer.from(request, 'utf8'));

@@ -1,7 +1,7 @@
-import type { TronWeb } from '@onekeyfe/onekey-tron-provider';
+﻿import type { TronWeb } from '@onekeyfe/onekey-tron-provider';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isUnionKey?: boolean;
   request<T>({ method, params }: { method: string; params?: any }): Promise<T>;
   on(event: string, callback: (...args: any[]) => void): void;
   removeListener(event: string, callback: (...args: any[]) => void): void;

@@ -1,4 +1,4 @@
-/* eslint-disable no-unsafe-optional-chaining */
+﻿/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
 import { dapps } from './dapps.config';
 import axios from 'axios';
@@ -126,7 +126,7 @@ export default function BTCExample() {
     },
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.conflux',
     },
   ]);

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-return */
 /* eslint-disable no-unsafe-optional-chaining */
@@ -111,7 +111,7 @@ export default function Example() {
     {
       info: {
         uuid: 'injected-onekey',
-        name: 'Injected OneKey',
+        name: 'Injected UnionKey',
         inject: '$onekey.tron',
       }
     },

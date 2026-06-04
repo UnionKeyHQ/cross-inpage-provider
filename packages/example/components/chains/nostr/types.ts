@@ -1,4 +1,4 @@
-export enum EventKind {
+﻿export enum EventKind {
   Metadata = 0,
   Text = 1,
   RelayRec = 2,
@@ -18,7 +18,7 @@ export type Event = {
 };
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isUnionKey?: boolean;
   on(event: string, listener: (...args: any[]) => void): this;
   removeListener(event: string, listener: (...args: any[]) => void): this;
   getPublicKey(): Promise<string>;

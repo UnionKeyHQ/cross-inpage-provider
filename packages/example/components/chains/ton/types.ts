@@ -1,7 +1,7 @@
-import { PublicKey } from '@solana/web3.js';
+﻿import { PublicKey } from '@solana/web3.js';
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isUnionKey?: boolean;
   connect(): Promise<{
     publicKey: PublicKey;
   }>;

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+﻿/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
 import { dapps } from './dapps.config';
 import ConnectButton from '../../connect/ConnectButton';
@@ -65,7 +65,7 @@ const signTransactionCompat = async (
     })) as string;
     return { signedTxXdr: signedXdr };
   } else {
-    // OneKey style
+    // UnionKey style
     return (await provider.signTransaction(xdr, {
       networkPassphrase,
     })) as { signedTxXdr: string };
@@ -86,7 +86,7 @@ const signMessageCompat = async (
     })) as string;
     return { signedMessage };
   } else {
-    // OneKey style
+    // UnionKey style
     return (await provider.signMessage(message, opts)) as { signedMessage: string };
   }
 };
@@ -105,7 +105,7 @@ const signAuthEntryCompat = async (
     })) as string;
     return { signedAuthEntry };
   } else {
-    // OneKey style
+    // UnionKey style
     return (await provider.signAuthEntry(authEntry, opts)) as { signedAuthEntry: string };
   }
 };
@@ -114,7 +114,7 @@ export default function StellarExample() {
   const walletsRef = useRef<IProviderInfo[]>([
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.stellar',
     },
     {
@@ -149,10 +149,10 @@ export default function StellarExample() {
       return;
     }
 
-    // Get address from wallet - support both OneKey and Hana Wallet
+    // Get address from wallet - support both UnionKey and Hana Wallet
     let address: string;
     if (provider.getAddress) {
-      // OneKey style
+      // UnionKey style
       const result = await provider.getAddress();
       address = result.address;
     } else if (provider.getPublicKey) {
@@ -255,11 +255,11 @@ export default function StellarExample() {
       <ApiGroup title="Basics">
         <ApiPayload
           title="getAddress / getPublicKey"
-          description="获取钱包地址（兼容 OneKey 和 Hana Wallet）"
+          description="获取钱包地址（兼容 UnionKey and Hana Wallet）"
           disableRequestContent
           onExecute={async () => {
             if (provider?.getAddress) {
-              // OneKey style
+              // UnionKey style
               const res = await provider.getAddress();
               return JSON.stringify(res, null, 2);
             } else if (provider?.getPublicKey) {

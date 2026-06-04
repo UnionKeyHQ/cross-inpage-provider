@@ -1,4 +1,4 @@
-// Stellar Provider API types
+﻿// Stellar Provider API types
 export type GetAddressParams = {
   path?: string;
   skipRequestAccess?: boolean;
@@ -69,10 +69,10 @@ export type HanaSignMessageParams = {
 };
 
 export interface IProviderApi {
-  isOneKey?: boolean;
+  isUnionKey?: boolean;
 
   /**
-   * Get the public key from the active account or specific path (OneKey style)
+   * Get the public key from the active account or specific path (UnionKey style)
    */
   getAddress?(params?: GetAddressParams): Promise<GetAddressResult>;
 
@@ -83,7 +83,7 @@ export interface IProviderApi {
 
   /**
    * Sign a transaction in XDR format
-   * Supports both OneKey style (2 params) and Hana style (1 object param)
+   * Supports both UnionKey style (2 params) and Hana style (1 object param)
    */
   signTransaction(
     xdrOrParams: string | HanaSignTransactionParams,
@@ -98,7 +98,7 @@ export interface IProviderApi {
 
   /**
    * Sign an AuthEntry XDR
-   * Supports both OneKey style (2 params) and Hana style (1 object param)
+   * Supports both UnionKey style (2 params) and Hana style (1 object param)
    */
   signAuthEntry(
     authEntryOrParams: string | HanaSignAuthEntryParams,
@@ -111,7 +111,7 @@ export interface IProviderApi {
 
   /**
    * Sign an arbitrary message
-   * Supports both OneKey style (2 params) and Hana style (1 object param)
+   * Supports both UnionKey style (2 params) and Hana style (1 object param)
    */
   signMessage(
     messageOrParams: string | HanaSignMessageParams,

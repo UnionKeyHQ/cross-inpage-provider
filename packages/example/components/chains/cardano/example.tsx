@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, */
+﻿/* eslint-disable @typescript-eslint/no-unused-vars, */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/require-await, @typescript-eslint/restrict-template-expressions */
 import { dapps } from './dapps.config';
@@ -46,7 +46,7 @@ export default function Example() {
     },
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.cardano',
     },
   ]);

@@ -1,10 +1,10 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-OneKey Cross-Inpage-Provider is a TypeScript monorepo that provides blockchain wallet integration for dApps across 20+ networks including Ethereum, Solana, Bitcoin, Cosmos, and more. It enables cross-platform wallet communication through extensions, desktop apps, and mobile WebViews.
+UnionKey Cross-Inpage-Provider is a TypeScript monorepo that provides blockchain wallet integration for dApps across 20+ networks including Ethereum, Solana, Bitcoin, Cosmos, and more. It enables cross-platform wallet communication through extensions, desktop apps, and mobile WebViews.
 
 ## Development Commands
 

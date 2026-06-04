@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/restrict-plus-operands,@typescript-eslint/ban-ts-comment */
 import React from 'react';
 import {
-  OneKeyNearProvider,
+  UnionKeyNearProvider,
   NearAccountsChangedPayload,
   NearNetworkChangedPayload,
   TransactionCreatorParams,
@@ -23,15 +23,15 @@ const hasWindow = typeof window !== 'undefined';
 
 declare global {
   interface Window {
-    provider: OneKeyNearProvider;
+    provider: UnionKeyNearProvider;
     nearAPI: typeof NearApi;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    OneKeyNearProvider: any;
+    UnionKeyNearProvider: any;
   }
 }
 
 window.nearAPI = NearApi;
-window.OneKeyNearProvider = OneKeyNearProvider;
+window.UnionKeyNearProvider = UnionKeyNearProvider;
 
 // TODO mobile web
 // TODO Toggle debugLogger button
@@ -62,7 +62,7 @@ function transactionCreator({
 }
 
 export default function NearExample() {
-  const [provider, setProvider] = useState<OneKeyNearProvider | null>(null);
+  const [provider, setProvider] = useState<UnionKeyNearProvider | null>(null);
   const [accountId, setAccountId] = useState('');
   const [publicKey, setPublicKey] = useState('');
   const [networkId, setNetworkId] = useState('');
@@ -124,7 +124,7 @@ export default function NearExample() {
 
     // const near = new NearApi.Near(config);
     // const connection = near.connection;
-    const _provider = new OneKeyNearProvider({
+    const _provider = new UnionKeyNearProvider({
       // connection,
       // networkId: config.networkId,
       // connectEagerly: true, // auto connect wallet accounts even if localStorage cleared
@@ -166,8 +166,8 @@ export default function NearExample() {
     <div>
       <DAppList dapps={dapps} />
       {!provider && (
-        <a target="_blank" href={'https://www.onekey.so/download/'}>
-          Install OneKey Extension →
+        <a target="_blank" href={'https://unionkey.io/desktop'}>
+          Install UnionKey Extension →
         </a>
       )}
       {provider && (

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { dapps } from './dapps.config';
 import ConnectButton from '../../../components/connect/ConnectButton';
 import { useEffect, useRef, useCallback, useState } from 'react';
@@ -487,7 +487,7 @@ function Example() {
             id: 'signIn',
             name: 'signIn',
             value: JSON.stringify({
-              walletName: 'OneKey',
+              walletName: 'UnionKey',
               input: {
                 domain: "localhost:3000",
                 nonce: Math.random().toString(16),
@@ -792,7 +792,7 @@ function Example() {
 
         <ApiPayload
           title="signAndSubmitTransaction Encode Argument"
-          description="Encode Argument 测试 (OneKey、OKX、MizuWallet 等都不支持)"
+          description="Encode Argument 测试 (UnionKey、OKX、MizuWallet 等都不支持)"
           presupposeParams={[
             {
               id: 'sender',
@@ -979,7 +979,7 @@ export default function App() {
           network: Network.MAINNET,
         }}
         // @ts-expect-error
-        optInWallets={['Petra', 'OneKey', 'OKX Wallet', 'Nightly', 'Mizu Wallet', 'Pontem Wallet']}
+        optInWallets={['Petra', 'UnionKey', 'OKX Wallet', 'Nightly', 'Mizu Wallet', 'Pontem Wallet']}
         onError={(error) => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           console.log('error', error);

@@ -1,4 +1,4 @@
-export default {
+﻿export default {
   switchNetwork: [
     {
       id: 'switchNetwork livenet',
@@ -78,7 +78,7 @@ export default {
       id: 'signMessage bip322-simple',
       name: 'SignMessage Bip322-Simple',
       value: JSON.stringify({
-        msg: 'hello onekey!',
+        msg: 'hello unionkey!',
         type: 'bip322-simple',
       }),
     },
@@ -109,7 +109,7 @@ export default {
         toAddress: address,
         satoshis: 1000,
         options: {
-          memo: 'Hello OneKey',
+          memo: 'Hello UnionKey',
         },
       }),
     },

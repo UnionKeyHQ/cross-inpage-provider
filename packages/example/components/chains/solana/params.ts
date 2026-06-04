@@ -1,4 +1,4 @@
-const TOKEN_LIST = [
+﻿const TOKEN_LIST = [
   {
     symbol: 'USDT',
     tokenMint: 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB',
@@ -20,7 +20,7 @@ export default {
     {
       id: 'signMessage',
       name: 'signMessage',
-      value: 'Hello OneKey',
+      value: 'Hello UnionKey',
     },
   ],
   signAndSendTransaction: (publicKey: string) => [

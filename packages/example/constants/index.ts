@@ -1,7 +1,7 @@
-export const DEFAULT_APP_METADATA = {
+﻿export const DEFAULT_APP_METADATA = {
   name: 'dApp Example',
-  description: 'OneKey dApp Example for WalletConnect',
-  url: 'https://dapp-example.onekeytest.com/',
+  description: 'UnionKey dApp Example for WalletConnect',
+  url: 'https://dapp-example.unionkey.io/',
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
   verifyUrl: 'https://verify.walletconnect.com',
 };

@@ -1,4 +1,4 @@
-name: publish-npm-packages
+﻿name: publish-npm-packages
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ jobs:
   publish-packages:
     runs-on: ubuntu-latest
     env:
-      TEST_ENDPOINT: dapp-example.onekeytest.com
+      TEST_ENDPOINT: dapp-example.unionkey.io
     steps:
       - uses: actions/checkout@v4
 

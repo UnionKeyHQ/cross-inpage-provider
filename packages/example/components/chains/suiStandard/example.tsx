@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -309,7 +309,7 @@ function Example() {
       <ApiGroup title="SignMessage">
         {/* <ApiPayload
           title="signMessage"
-          description="签名消息, signMessage 不安全已经弃用, 目前（OneKey、Suiet、Sui Wallet、Martian） signMessage 实际实现已经变成了 signPersonalMessage"
+          description="签名消息, signMessage 不安全已经弃用, 目前（UnionKey、Suiet、Sui Wallet、Martian） signMessage 实际实现已经变成了 signPersonalMessage"
           presupposeParams={params.signMessage}
           onExecute={async (request: string) => {
             const res = await signMessage({

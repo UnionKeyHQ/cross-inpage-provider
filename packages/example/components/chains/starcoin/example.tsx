@@ -1,4 +1,4 @@
-/* eslint-disable no-unsafe-optional-chaining */
+﻿/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { dapps } from './dapps.config';
 import ConnectButton from '../../../components/connect/ConnectButton';
@@ -21,7 +21,7 @@ export default function BTCExample() {
     },
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.starcoin',
     },
   ]);

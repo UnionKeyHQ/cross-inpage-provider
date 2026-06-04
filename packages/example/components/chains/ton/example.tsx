@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return */
 import { dapps } from './dapps.config';
 import { ApiPayload, ApiGroup } from '../../ApiActuator';
 import DappList from '../../DAppList';
@@ -357,8 +357,8 @@ export default function App() {
   const enable = localStorage.getItem(TON_SCAM_DAPP_ENABLE_KEY);
 
   const manifestUrl = enable
-    ? 'https://dapp-example.onekeytest.com/scam-tonconnect-manifest.json'
-    : 'https://dapp-example.onekeytest.com/tonconnect-manifest.json';
+    ? 'https://dapp-example.unionkey.io/scam-tonconnect-manifest.json'
+    : 'https://dapp-example.unionkey.io/tonconnect-manifest.json';
 
   return (
     <>

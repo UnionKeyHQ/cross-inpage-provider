@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+﻿/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { dapps } from './dapps.config';
@@ -27,7 +27,7 @@ export default function Example() {
     },
     {
       uuid: 'injected-onekey',
-      name: 'Injected OneKey',
+      name: 'Injected UnionKey',
       inject: '$onekey.aptos',
     },
   ]);
@@ -361,7 +361,7 @@ export default function Example() {
               value: JSON.stringify({
                 name: 'Collection 1',
                 description: 'Collection 1 description',
-                uri: 'https://onekey.so',
+                uri: 'https://unionkey.io',
               }),
             },
           ]}
